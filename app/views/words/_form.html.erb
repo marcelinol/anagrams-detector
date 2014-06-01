@@ -1,0 +1,39 @@
+<%= form_for(@word) do |f| %>
+  <% if @word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@word.errors.count, "error") %> prohibited this word from being saved:</h2>
+
+      <ul>
+      <% @word.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <p align = "center">
+      <span style="font-size: medium; font-family: arial,helvetica,sans-serif;">
+    <%= f.label 'First Word' %><br>
+    <%= f.text_field :firstWord %>
+  </span>
+  </p>
+  </div>
+  <div class="field">
+     <p align = "center">
+      <span style="font-size: medium; font-family: arial,helvetica,sans-serif;">
+    <%= f.label 'Second Word' %><br>
+    <%= f.text_field :secondWord %>
+    </span>
+    </p>
+  </div>
+<!--   <div class="field">
+    <%= f.label :anagram %><br>
+    <%= f.check_box :anagram %>
+  </div> -->
+  <div class="actions">
+    <p align = "center">
+    <%= f.submit "Test Words" %>
+  </p>
+  </div>
+<% end %>

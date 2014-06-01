@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<span style="font-size: medium; font-family: arial,helvetica,sans-serif;">
+<% @word.is_anagram %>
+
+<p>
+  <strong>First Word:</strong>
+  <%= @word.firstWord %>
+</p>
+
+<p>
+  <strong>Second Word:</strong>
+  <%= @word.secondWord %>
+</p>
+
+<p>
+  <strong>Is anagram?</strong>
+  <%= @word.anagram %>
+</p>
+</span>
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Database', words_path %>
